@@ -11,6 +11,15 @@ git clone https://github.com/Jhamile08/Javascript-asincrono.git
 cd Javascript-asincrono
 ```
 
+## 📂 Estructura del proyecto
+
+```
+javascript-asincrono/
+│── tutorial/   # Diferencia entre JS sincrono y asíncrono
+│── codigo/     # Código de los ejercicios
+│── Readme.md/  # Información general
+```
+
 ## 📌 Contenido
 
 - Ejercicios prácticos de **callbacks**
@@ -18,7 +27,6 @@ cd Javascript-asincrono
 - Implementación de **async/await**
 - Manejo de **errores asíncronos**
 - Casos de uso en aplicaciones reales
-
 
 ## 📜 Licencia
 
