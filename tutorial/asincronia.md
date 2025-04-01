@@ -33,7 +33,8 @@ setTimeout(() => {
 
 console.log("Fin");
 ```
-<details><summary>🔹 Solución</summary>
+Con asincronismo
+```js
 console.log("Inicio");
 
 setTimeout(() => {
@@ -44,8 +45,8 @@ setTimeout(() => {
 }, 2000);
 
 console.log("Fin");
-</details>
 
+```
 ### **Promesas**
 
 Una promesa es un objeto que representa una operación que aún no ha terminado, pero que lo hará en el futuro.
