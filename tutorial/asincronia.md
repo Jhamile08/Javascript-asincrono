@@ -169,8 +169,8 @@ Crea una función fetchData(url) que obtenga datos de una API y los muestre en c
 ```js
 fetchData("https://pokeapi.co/api/v2/pokemon/pikachu");
 ```
-```js
 <details><summary>🔹 Solución</summary>
+```js
 async function fetchData(url) {
   try {
     let response = await fetch(url);
@@ -184,5 +184,5 @@ async function fetchData(url) {
 // Llamada de ejemplo
 fetchData("https://pokeapi.co/api/v2/pokemon/pikachu");
 
-</details> 
 ```
+</details> 
