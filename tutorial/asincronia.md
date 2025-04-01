@@ -34,7 +34,7 @@ setTimeout(() => {
 console.log("Fin");
 ```
 Con asincronismo
-```js
+
 <details><summary>🔹 Solución</summary>
 
 console.log("Inicio");
@@ -50,7 +50,7 @@ console.log("Fin");
 
 
 </details>
-```
+
 ### **Promesas**
 
 Una promesa es un objeto que representa una operación que aún no ha terminado, pero que lo hará en el futuro.
@@ -105,7 +105,7 @@ Maneja el resultado con .then() y .catch().
 comprarProducto(50, 100); // ✅ Compra realizada
 comprarProducto(150, 100); // ❌ Saldo insuficiente
 ```
-```js
+
 <details><summary>🔹 Solución</summary>
 
 function comprarProducto(precio, saldo) {
@@ -120,7 +120,7 @@ function comprarProducto(precio, saldo) {
 comprarProducto(50, 100).then(mensaje => console.log(mensaje)).catch(error => console.error(error));
 
 </details>
-```
+
 ### **Async/await**
 
 ### **¿Qué es async/await?**
@@ -146,7 +146,7 @@ comprarProducto(50, 100)
 ```
 
 ### **Ahora con await
-```js
+
 <details><summary>🔹 Solución</summary>
 
 async function procesarCompra(precio, saldo) {
@@ -160,8 +160,6 @@ async function procesarCompra(precio, saldo) {
 
 procesarCompra(50, 100);
 </details>
-```
-
 
 ### **Ejercicio final: Obtener datos de una API
 
@@ -170,7 +168,6 @@ Crea una función fetchData(url) que obtenga datos de una API y los muestre en c
 fetchData("https://pokeapi.co/api/v2/pokemon/pikachu");
 ```
 <details><summary>🔹 Solución</summary>
-```js
 async function fetchData(url) {
   try {
     let response = await fetch(url);
@@ -184,5 +181,4 @@ async function fetchData(url) {
 // Llamada de ejemplo
 fetchData("https://pokeapi.co/api/v2/pokemon/pikachu");
 
-```
 </details> 
