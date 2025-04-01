@@ -1,4 +1,4 @@
-# JavaScript Asíncrono Practice
+# JavaScript Asíncrono Practica
 
 Bienvenidos a **JavaScript Asíncrono Practice**, un repositorio con ejercicios prácticos para mejorar tus habilidades en JavaScript asíncrono.
 
