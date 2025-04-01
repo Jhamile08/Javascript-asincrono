@@ -1,11 +1,12 @@
-Que es un callback en javascript?
+# Callbacks, Promesas y Async/Await en JavaScript  
 
-Es una funcion que se pasa como argumento otra funcion y se ejecuta después de que esta termine su proceso.
+## **¿Qué es un Callback en JavaScript?**  
+Un callback es una función que se pasa como argumento a otra función y se ejecuta después de que esta termine su proceso.  
 
-para mejorar las tareas asincronas se usa setTimeout, peticiones de APIs (fech), o la manipulacion de eventos en el DOM
+Los callbacks se usan para mejorar las tareas asíncronas como `setTimeout()`, peticiones a APIs con `fetch()`, o la manipulación de eventos en el DOM.  
 
-Ejemplo de un callback:
-
+### **Ejemplo de un Callback**  
+```js
 function saludo(nombre, callback) {
     console.log(`Hola, ${nombre}`);
     callback();
@@ -17,8 +18,9 @@ function despedida() {
 
 saludo("Ana", despedida);
 
-Ejemplo en tiempo real (ordenar la función):
-
+```
+### **Ejemplo en tiempo real (ordenar la función)**
+```js
 console.log("Inicio");
 
 setTimeout(() => {
@@ -30,9 +32,8 @@ setTimeout(() => {
 }, 1000);
 
 console.log("Fin");
-
-//solucion
-
+```
+<details><summary>🔹 Solución</summary>
 console.log("Inicio");
 
 setTimeout(() => {
@@ -43,8 +44,9 @@ setTimeout(() => {
 }, 2000);
 
 console.log("Fin");
+</details>
 
-Promesas
+### **Promesas**
 
 Una promesa es un objeto que representa una operación que aún no ha terminado, pero que lo hará en el futuro.
 
@@ -56,6 +58,7 @@ Fulfilled (Cumplida): La operación se resolvió con éxito.
 
 Rejected (Rechazada): Hubo un error en la operación.
 
+```js
 function pedirHamburguesa() {
     return new Promise((resolve, reject) => {
         console.log("Pedido realizado...");
@@ -77,8 +80,9 @@ pedirHamburguesa()
     .then((mensaje) => console.log(mensaje))  // Si se cumple la promesa
     .catch((error) => console.error(error)); // Si la promesa falla
 
+```
 
-Ejercicio: Simular una compra en línea 🛒
+### **Ejercicio: Simular una compra en línea 🛒**
 Crea una función comprarProducto(precio, saldo).
 
 Usa una promesa que:
@@ -91,22 +95,36 @@ Usa setTimeout() para simular un tiempo de espera de 2 segundos.
 
 Maneja el resultado con .then() y .catch().
 
-Ejemplo esperado
-
+### **Resultado esperado**
+```js
 comprarProducto(50, 100); // ✅ Compra realizada
 comprarProducto(150, 100); // ❌ Saldo insuficiente
+```
+<details><summary>🔹 Solución</summary>
 
+function comprarProducto(precio, saldo) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            saldo >= precio ? resolve("✅ Compra realizada") : reject("❌ Saldo insuficiente");
+        }, 2000);
+    });
+}
 
-Async/await
+// Usando .then() y .catch()
+comprarProducto(50, 100).then(mensaje => console.log(mensaje)).catch(error => console.error(error));
 
-¿Qué es async/await?
+</details>
+
+### **Async/await**
+
+### **¿Qué es async/await?**
 
 Es una forma más limpia y fácil de manejar promesas en JavaScript.
 
 Hace que el código asíncrono parezca síncrono, evitando .then() y .catch()
 
-Vamos a tranformar el anterior ejercicio en async
-
+### **Vamos a tranformar el anterior ejercicio en async
+```js
 function comprarProducto(precio, saldo) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -119,8 +137,11 @@ function comprarProducto(precio, saldo) {
 comprarProducto(50, 100)
     .then(mensaje => console.log(mensaje))
     .catch(error => console.error(error));
+```
 
-Ahora con await
+### **Ahora con await
+
+<details><summary>🔹 Solución</summary>
 
 async function procesarCompra(precio, saldo) {
     try {
@@ -131,5 +152,28 @@ async function procesarCompra(precio, saldo) {
     }
 }
 
-// Llamar la función
 procesarCompra(50, 100);
+</details>
+
+
+### **Ejercicio final: Obtener datos de una API
+
+Crea una función fetchData(url) que obtenga datos de una API y los muestre en consola.
+```js
+fetchData("https://pokeapi.co/api/v2/pokemon/pikachu");
+```
+<details><summary>🔹 Solución</summary>
+async function fetchData(url) {
+  try {
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log("Datos obtenidos:", data);
+  } catch (error) {
+    console.log("Error al obtener datos:", error);
+  }
+}
+
+// Llamada de ejemplo
+fetchData("https://pokeapi.co/api/v2/pokemon/pikachu");
+
+</details> ```
